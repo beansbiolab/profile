@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[한글 이름] | 빈즈바이오랩</title>
-  <meta name="description" content="의료 현장의 경험을, 더 나은 헬스케어로.">
+  <title>이용호 | 빈즈바이오랩</title>
+  <meta name="description" content="이용호 · 마취통증의학과 전문의 · 빈즈바이오랩 대표. 의료 현장의 경험을, 더 나은 헬스케어로.">
   <style>
     :root {
       --bg: #f7f4ee;
@@ -21,6 +21,7 @@
       line-height: 1.7;
       word-break: keep-all;
     }
+    a { color: var(--accent); }
     .hero { position: relative; }
     .hero img {
       width: 100%;
@@ -30,9 +31,7 @@
       display: block;
       background: #e8e3d8;
     }
-    .hero .intro {
-      padding: 28px 24px 8px;
-    }
+    .hero .intro { padding: 28px 24px 8px; }
     .name { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
     .name span { font-size: 15px; font-weight: 400; color: var(--sub); margin-left: 8px; }
     .role { margin-top: 6px; color: var(--sub); font-size: 15px; }
@@ -53,10 +52,10 @@
       padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
-    /* 이력 타임라인 */
+    /* 이력 */
     .timeline { list-style: none; }
     .timeline li { display: flex; gap: 16px; padding: 8px 0; font-size: 15px; }
-    .timeline .year { min-width: 64px; color: var(--sub); }
+    .timeline .label { min-width: 84px; color: var(--sub); }
     /* 프로젝트 스와이프 */
     .cards {
       display: flex;
@@ -87,6 +86,26 @@
     }
     .card p { font-size: 14px; color: var(--sub); }
     .card .my-role { margin-top: 8px; color: var(--ink); }
+    /* 논문 */
+    .pubs { list-style: none; counter-reset: pub; }
+    .pubs li {
+      counter-increment: pub;
+      position: relative;
+      padding: 12px 0 12px 30px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.6;
+    }
+    .pubs li::before {
+      content: counter(pub);
+      position: absolute; left: 0; top: 12px;
+      font-size: 12px; color: var(--accent); font-weight: 700;
+    }
+    .pubs .title { display: block; color: var(--ink); font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+    .pubs .me { color: var(--ink); font-weight: 700; }
+    .pubs .journal { font-style: italic; }
+    .pubs .doi { display: inline-block; margin-top: 2px; font-size: 13px; }
     /* 연락처 */
     .contact { display: flex; flex-direction: column; gap: 10px; }
     .btn {
@@ -120,10 +139,10 @@
 <body>
 
   <header class="hero">
-    <img src="images/profile.jpg" alt="[한글 이름] 프로필 사진">
+    <img src="images/profile.jpg" alt="이용호 프로필 사진">
     <div class="intro">
-      <h1 class="name">[한글 이름]<span>[English Name]</span></h1>
-      <p class="role">빈즈바이오랩 대표 · 마취통증의학과 전문의</p>
+      <h1 class="name">이용호<span>Yong Ho Lee</span></h1>
+      <p class="role">마취통증의학과 전문의<br>리드엠마취통증의학과의원 대표원장 · 빈즈바이오랩 대표</p>
       <p class="tagline">의료 현장의 경험을,<br>더 나은 헬스케어로.</p>
     </div>
   </header>
@@ -137,10 +156,12 @@
     <section>
       <h2>Career</h2>
       <ul class="timeline">
-        <li><span class="year">[연도]</span><span>리드엠마취통증의학과의원 [직함]</span></li>
-        <li><span class="year">[연도]</span><span>빈즈바이오랩 설립 · 대표</span></li>
-        <li><span class="year">[연도]</span><span>[학력·수련·경력 항목]</span></li>
-        <li><span class="year">[연도]</span><span>[학력·수련·경력 항목]</span></li>
+        <li><span class="label">현재</span><span>리드엠마취통증의학과의원 대표원장</span></li>
+        <li><span class="label">현재</span><span>빈즈바이오랩 설립 · 대표</span></li>
+        <li><span class="label">현재</span><span>계명대학교 의과대학 외래교수</span></li>
+        <li><span class="label">현재</span><span>가톨릭대학교 의과대학 외래교수</span></li>
+        <li><span class="label">학회</span><span>대한통증학회 평의원</span></li>
+        <li><span class="label">학회</span><span>대한통증학회 통증분과 인증의</span></li>
       </ul>
     </section>
 
@@ -169,18 +190,53 @@
     </section>
 
     <section>
-      <h2>Research</h2>
-      <ul class="timeline">
-        <li><span class="year">[연도]</span><span>Frontiers in Rehabilitation Sciences · painless cervical motor radiculopathy 비수술적 치료 증례 <a href="#">[링크]</a></span></li>
-        <li><span class="year">[연도]</span><span>Cureus · 자가혈장 및 buffy coat 정주 후 NK cell activity 증례 <a href="#">[링크]</a></span></li>
-      </ul>
+      <h2>Publications</h2>
+      <ol class="pubs">
+        <li>
+          <span class="title">Intravenous Infusion of Autologous Plasma and Buffy Coat Components Enhances Natural Killer Cell Activity: A Case Report</span>
+          <span class="me">Lee Y.</span> <span class="journal">Cureus.</span> 2026.<br>
+          <a class="doi" href="https://doi.org/10.7759/cureus.105873" target="_blank" rel="noopener">doi:10.7759/cureus.105873</a>
+        </li>
+        <li>
+          <span class="title">Case Report: Nonsurgical management of painless cervical motor radiculopathy</span>
+          <span class="me">Lee YH.</span> <span class="journal">Front Rehabil Sci.</span> 2025;6:1695867.<br>
+          <a class="doi" href="https://doi.org/10.3389/fresc.2025.1695867" target="_blank" rel="noopener">doi:10.3389/fresc.2025.1695867</a>
+        </li>
+        <li>
+          <span class="title">Bioinformatic Analysis for the Prognostic Implication of Genes Encoding Epithelial Sodium Channel in Cervical Cancer</span>
+          Song C, <span class="me">Lee Y</span>, Kim S. <span class="journal">Int J Gen Med.</span> 2022;15:1777–1787.<br>
+          <a class="doi" href="https://doi.org/10.2147/IJGM.S346222" target="_blank" rel="noopener">doi:10.2147/IJGM.S346222</a>
+        </li>
+        <li>
+          <span class="title">Greater occipital nerve blockade using ultrasound guidance for the headache of spontaneous intracranial hypotension: A case report</span>
+          Hong JH, Lee HW, <span class="me">Lee YH.</span> <span class="journal">Anesth Pain Med.</span> 2022;17:62–66.<br>
+          <a class="doi" href="https://doi.org/10.17085/apm.21082" target="_blank" rel="noopener">doi:10.17085/apm.21082</a>
+        </li>
+        <li>
+          <span class="title">Gasserian ganglion radiofrequency thermoablation in a patient with aneurysm of the anterior communicating artery: A case report</span>
+          <span class="me">Lee YH</span>, Hong JH, Shin HK. <span class="journal">Anesth Pain Med.</span> 2021.<br>
+          <a class="doi" href="https://doi.org/10.17085/apm.21019" target="_blank" rel="noopener">doi:10.17085/apm.21019</a>
+        </li>
+        <li>
+          <span class="title">Factors Predicting the Success of Adhesiolysis Using a Steerable Catheter in Lumbar Failed Back Surgery Syndrome: A Retrospective Study</span>
+          Kim JY, <span class="me">Lee YH</span>, Yoo S, Kim JY, Joo M, Park HJ. <span class="journal">J Clin Med.</span> 2021;10(5):913.<br>
+          <a class="doi" href="https://doi.org/10.3390/jcm10050913" target="_blank" rel="noopener">doi:10.3390/jcm10050913</a>
+        </li>
+        <li>
+          <span class="title">Effect of botulinum toxin type A on the cervical sympathetic trunk in chronic relapsing inflammatory optic neuropathy</span>
+          Kim JY, <span class="me">Lee YH</span>, Kim YH. <span class="journal">Chin Med J (Engl).</span> [연도 확인] (Letter)
+        </li>
+        <li>
+          <span class="title">Intrathecal drug delivery to treat intractable neuropathic pain following Sjögren's syndrome-induced transverse myelitis: A case report</span>
+          Kim JY, <span class="me">Lee YH</span>, Kim JY, Lee HH, Kim YH. <span class="journal">Medicine (Baltimore).</span> [연도·권호 확인]
+        </li>
+      </ol>
     </section>
 
     <section>
       <h2>Contact</h2>
       <div class="contact">
-        <a class="btn primary" href="mailto:[이메일]">이메일 보내기</a>
-        <a class="btn" href="tel:[전화번호]">전화하기</a>
+        <a class="btn primary" href="mailto:leadmpain@gmail.com">이메일 보내기</a>
       </div>
     </section>
 
